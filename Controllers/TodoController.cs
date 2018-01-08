@@ -18,6 +18,7 @@ namespace TodoApi.Controllers
             {
                 _context.TodoItems.Add(new TodoItem { Name = "Buy milk" });
                 _context.TodoItems.Add(new TodoItem { Name = "Wash car" });
+                _context.TodoItems.Add(new TodoItem { Name = "Buy book" });
                 _context.SaveChanges();
             }
         }
