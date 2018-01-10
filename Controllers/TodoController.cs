@@ -21,17 +21,14 @@ namespace TodoApi.Controllers
                 _context.TodoItems.Add(new TodoItem { Name = "Buy book" });
                 _context.TodoItems.Add(new TodoItem { Name = "Investigate docker test best practicies" });
                 _context.SaveChanges();
-
-                // some minor chages
-                var a = 1;
-                a++;
             }
         }
 
         [HttpGet]
         public IEnumerable<TodoItem> GetAll()
         {
-            return _context.TodoItems.ToList();
+            return _context.TodoItems.ToList()
+                .OrderBy(x => x.Id);
         }
 
         [HttpGet("{id}", Name = "GetTodo")]
