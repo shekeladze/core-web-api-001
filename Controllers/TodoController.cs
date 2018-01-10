@@ -27,7 +27,7 @@ namespace TodoApi.Controllers
         public IEnumerable<TodoItem> GetAll()
         {
             return _context.TodoItems.ToList()
-                .OrderBy(x => x.Id);
+                .OrderByDescending(x => x.Id);
         }
 
         [HttpGet("{id}", Name = "GetTodo")]
